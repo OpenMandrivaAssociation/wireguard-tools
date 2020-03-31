@@ -11,7 +11,7 @@ Group:		Networking/Other
 Source0:	https://git.zx2c4.com/%{name}/snapshot/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:	pkgconfig(libmnl)
-Requires:	kmod(wireguard.ko)
+Requires:	kmod(wireguard)
 
 %description
 WireGuard is a novel VPN that runs inside the Linux Kernel and uses
