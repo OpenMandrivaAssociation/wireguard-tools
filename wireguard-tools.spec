@@ -28,15 +28,28 @@ This package provides the wg binary for controling WireGuard.
 %autosetup -p1
 
 %build
-cd %{_builddir}/%{name}-%{version}/src
-%make_build
+%set_build_flags
+## Start DNS Hatchet
+cd contrib/dns-hatchet
+./apply.sh
+cd -
+## End DNS Hatchet
+ 
+%make_build RUNSTATEDIR=%{_rundir} -C src
 
 %install
-cd %{_builddir}/%{name}-%{version}/src
-%make_install WITH_BASHCOMPLETION=yes WITH WGQUICK=yes WITH_SYSTEMDUNITS=yes
+mkdir -p %{buildroot}%{_bindir}
+
+%make_install BINDIR=%{_bindir} MANDIR=%{_mandir} RUNSTATEDIR=%{_rundir} \
+WITH_BASHCOMPLETION=yes WITH_WGQUICK=yes WITH_SYSTEMDUNITS=yes -C src
+ 
+mkdir -p %{buildroot}%{_docdir}/%{name}/contrib/
+cp -fr %{_builddir}/wireguard-tools-%{version}/contrib/* %{buildroot}%{_docdir}/%{name}/contrib/
+find %{buildroot}%{_docdir}/%{name}/contrib/ -type f -name "*.gitignore" -exec rm -f {} \;
 
 %files
 %doc README.md
+%{_docdir}/%{name}/contrib
 %{_bindir}/wg
 %{_bindir}/wg-quick
 %{_datadir}/bash-completion/completions/wg
