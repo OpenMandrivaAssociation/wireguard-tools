@@ -55,5 +55,6 @@ find %{buildroot}%{_docdir}/%{name}/contrib/ -type f -name "*.gitignore" -exec r
 %{_datadir}/bash-completion/completions/wg
 %{_datadir}/bash-completion/completions/wg-quick
 %{_unitdir}/wg-quick@.service
+%{_unitdir}/wg-quick.target
 %{_mandir}/man8/wg.8*
 %{_mandir}/man8/wg-quick.8*
