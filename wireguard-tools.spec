@@ -1,10 +1,10 @@
 %global debug_package %{nil}
-%define shapshot 20200513
+%define snapshot 20210315
 
 Summary:	Fast, modern, secure VPN tunnel
 Name:		wireguard-tools
 URL:		https://www.wireguard.com/
-Version:	1.0.20200513
+Version:	1.0.%{snapshot}
 Release:	1
 License:	GPLv2
 Group:		Networking/Other
