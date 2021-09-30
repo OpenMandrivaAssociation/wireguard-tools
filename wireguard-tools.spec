@@ -1,5 +1,4 @@
-%global debug_package %{nil}
-%define snapshot 20210315
+%define snapshot 20210914
 
 Summary:	Fast, modern, secure VPN tunnel
 Name:		wireguard-tools
