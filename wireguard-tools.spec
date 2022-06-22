@@ -4,7 +4,7 @@ Summary:	Fast, modern, secure VPN tunnel
 Name:		wireguard-tools
 URL:		https://www.wireguard.com/
 Version:	1.0.%{snapshot}
-Release:	1
+Release:	2
 License:	GPLv2
 Group:		Networking/Other
 Source0:	https://git.zx2c4.com/%{name}/snapshot/%{name}-%{version}.tar.xz
@@ -33,7 +33,7 @@ cd contrib/dns-hatchet
 ./apply.sh
 cd -
 ## End DNS Hatchet
- 
+
 %make_build RUNSTATEDIR=%{_rundir} -C src
 
 %install
@@ -55,5 +55,5 @@ find %{buildroot}%{_docdir}/%{name}/contrib/ -type f -name "*.gitignore" -exec r
 %{_datadir}/bash-completion/completions/wg-quick
 %{_unitdir}/wg-quick@.service
 %{_unitdir}/wg-quick.target
-%{_mandir}/man8/wg.8*
-%{_mandir}/man8/wg-quick.8*
+%doc %{_mandir}/man8/wg.8*
+%doc %{_mandir}/man8/wg-quick.8*
