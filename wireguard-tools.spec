@@ -4,7 +4,7 @@ Summary:	Fast, modern, secure VPN tunnel
 Name:		wireguard-tools
 URL:		https://www.wireguard.com/
 Version:	1.0.%{snapshot}
-Release:	3
+Release:	4
 License:	GPLv2
 Group:		Networking/Other
 Source0:	https://git.zx2c4.com/%{name}/snapshot/%{name}-%{version}.tar.xz
@@ -51,6 +51,7 @@ find %{buildroot}%{_docdir}/%{name}/contrib/ -type f -name "*.gitignore" -exec r
 %{_docdir}/%{name}/contrib
 %{_bindir}/wg
 %{_bindir}/wg-quick
+%{_sysconfdir}/wireguard/
 %{_datadir}/bash-completion/completions/wg
 %{_datadir}/bash-completion/completions/wg-quick
 %{_unitdir}/wg-quick@.service
