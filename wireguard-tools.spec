@@ -4,7 +4,7 @@ Summary:	Fast, modern, secure VPN tunnel
 Name:		wireguard-tools
 URL:		https://www.wireguard.com/
 Version:	1.0.%{snapshot}
-Release:	3
+Release:	1
 License:	GPLv2
 Group:		Networking/Other
 Source0:	https://git.zx2c4.com/%{name}/snapshot/%{name}-%{version}.tar.xz
