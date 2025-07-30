@@ -1,4 +1,4 @@
-%define snapshot 20210914
+%define snapshot 20250521
 
 Summary:	Fast, modern, secure VPN tunnel
 Name:		wireguard-tools
@@ -45,12 +45,14 @@ WITH_BASHCOMPLETION=yes WITH_WGQUICK=yes WITH_SYSTEMDUNITS=yes -C src
 mkdir -p %{buildroot}%{_docdir}/%{name}/contrib/
 cp -fr %{_builddir}/wireguard-tools-%{version}/contrib/* %{buildroot}%{_docdir}/%{name}/contrib/
 find %{buildroot}%{_docdir}/%{name}/contrib/ -type f -name "*.gitignore" -exec rm -f {} \;
+install -d %{buildroot}%{_sysconfdir}/wireguard
 
 %files
 %doc README.md
 %{_docdir}/%{name}/contrib
 %{_bindir}/wg
 %{_bindir}/wg-quick
+%{_sysconfdir}/wireguard
 %{_datadir}/bash-completion/completions/wg
 %{_datadir}/bash-completion/completions/wg-quick
 %{_unitdir}/wg-quick@.service
