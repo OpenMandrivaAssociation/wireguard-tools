@@ -8,6 +8,7 @@ Release:	1
 License:	GPLv2
 Group:		Networking/Other
 Source0:	https://git.zx2c4.com/%{name}/snapshot/%{name}-%{version}.tar.xz
+BuildRequires:	make
 BuildRequires:	pkgconfig(systemd)
 BuildRequires:	pkgconfig(libmnl)
 Requires:	kmod(wireguard)
